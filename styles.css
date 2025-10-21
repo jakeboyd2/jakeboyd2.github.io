@@ -5,10 +5,16 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
   color: #333;
+  position: relative;
+  z-index: 1; /* Ensure content stays above particles */
 }
 
 a {
@@ -17,13 +23,15 @@ a {
 }
 
 .site-header {
-  background: #0e0f17;
+  background: rgba(14, 15, 23, 0.9); /* Semi-transparent to show particles */
   color: white;
   min-height: 60vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 2rem;
+  position: relative;
+  z-index: 2;
 }
 
 .navbar {
@@ -89,6 +97,12 @@ main {
   padding: 4rem 2rem;
   max-width: 1000px;
   margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.95); /* Semi-transparent white background */
+  border-radius: 10px;
+  margin-top: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 section {
@@ -139,6 +153,99 @@ section h2 {
   border-radius: 6px;
 }
 
+/* Project media styles */
+.project-media {
+  margin-top: 1rem;
+}
+
+/* YouTube preview styles */
+.youtube-preview {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.youtube-preview iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+}
+
+/* GitHub link preview styles */
+.github-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s ease;
+}
+
+.github-link:hover {
+  transform: translateY(-2px);
+}
+
+.github-preview {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, #24292e 0%, #2f363d 100%);
+  color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid #e1e4e8;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.github-preview:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.github-icon {
+  margin-right: 1rem;
+  flex-shrink: 0;
+}
+
+.github-icon svg {
+  width: 32px;
+  height: 32px;
+}
+
+.github-content h4 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+  color: #ffffff;
+}
+
+.github-content p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #d1d5da;
+  line-height: 1.4;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .youtube-preview {
+    padding-bottom: 75%; /* More square on mobile */
+  }
+  
+  .github-preview {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .github-icon {
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+  }
+}
+
 .contact-section form {
   max-width: 500px;
   margin: 0 auto;
@@ -173,4 +280,15 @@ section h2 {
   color: white;
   text-align: center;
   padding: 2rem;
+}
+
+/* Particles.js background styling */
+#particles-js {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none; /* Prevents particles from interfering with clicks */
 }

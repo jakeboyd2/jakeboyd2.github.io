@@ -23,16 +23,19 @@ document.querySelectorAll('.cert-image-container').forEach(container => {
 document.addEventListener('DOMContentLoaded', function() {
   const themeToggle = document.getElementById('theme-toggle');
   const body = document.body;
+  const html = document.documentElement;
   
   // Check for saved theme preference or default to 'light'
   const savedTheme = localStorage.getItem('theme') || 'light';
   body.setAttribute('data-theme', savedTheme);
+  html.setAttribute('data-theme', savedTheme);
   
   themeToggle.addEventListener('click', function() {
     const currentTheme = body.getAttribute('data-theme');
     const newTheme = currentTheme === 'light' ? 'dark' : 'light';
     
     body.setAttribute('data-theme', newTheme);
+    html.setAttribute('data-theme', newTheme);
     localStorage.setItem('theme', newTheme);
     
     // Update particles color scheme based on theme

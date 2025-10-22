@@ -134,24 +134,28 @@ a {
 }
 
 /* Dark mode styles */
-[data-theme="dark"] .theme-toggle {
+[data-theme="dark"] .theme-toggle,
+html[data-theme="dark"] .theme-toggle {
   background: rgba(74, 144, 226, 0.2);
   border-color: var(--primary-blue);
 }
 
-[data-theme="dark"] .toggle-circle {
+[data-theme="dark"] .toggle-circle,
+html[data-theme="dark"] .toggle-circle {
   transform: translateX(28px);
   background: var(--primary-blue);
 }
 
 /* Light mode styles */
 [data-theme="light"] .theme-toggle,
+html[data-theme="light"] .theme-toggle,
 :root .theme-toggle {
   background: rgba(255, 255, 255, 0.1);
   border-color: rgba(255, 255, 255, 0.2);
 }
 
 [data-theme="light"] .toggle-circle,
+html[data-theme="light"] .toggle-circle,
 :root .toggle-circle {
   transform: translateX(0);
   background: white;

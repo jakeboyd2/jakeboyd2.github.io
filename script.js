@@ -9,6 +9,16 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
+// Add click functionality to certification images
+document.querySelectorAll('.cert-image-container').forEach(container => {
+  container.addEventListener('click', function() {
+    const image = this.querySelector('.cert-image');
+    if (image) {
+      window.open(image.src, '_blank');
+    }
+  });
+});
+
 // Theme toggle functionality
 document.addEventListener('DOMContentLoaded', function() {
   const themeToggle = document.getElementById('theme-toggle');

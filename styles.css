@@ -67,15 +67,20 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 .nav-links {
   list-style: none;
   display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
 }
 
 .nav-links li {
-  margin-left: 1.5rem;
+  margin: 0;
 }
 
 .nav-links a {
@@ -885,8 +890,42 @@ section h2::after {
   white-space: nowrap;
 }
 
-/* Responsive design for social buttons */
+/* Enhanced Mobile Responsiveness */
 @media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .nav-links {
+    justify-content: center;
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .logo {
+    width: 100%;
+    text-align: center;
+  }
+
+  .site-header {
+    padding: 1rem;
+  }
+
+  main {
+    padding: 2rem 1rem;
+    margin: 1rem;
+  }
+
+  .projects-section .project {
+    padding: 1rem;
+  }
+
+  .hero {
+    padding: 2rem 1rem;
+  }
+
+  /* Responsive design for social buttons */
   .social-links {
     gap: 1rem;
   }

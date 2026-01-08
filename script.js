@@ -19,6 +19,16 @@ document.querySelectorAll('.cert-image-container').forEach(container => {
   });
 });
 
+// Add click functionality to education images
+document.querySelectorAll('.education-image-container').forEach(container => {
+  container.addEventListener('click', function() {
+    const image = this.querySelector('.education-image');
+    if (image) {
+      window.open(image.src, '_blank');
+    }
+  });
+});
+
 // Theme toggle functionality
 document.addEventListener('DOMContentLoaded', function() {
   const themeToggle = document.getElementById('theme-toggle');

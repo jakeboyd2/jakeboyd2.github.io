@@ -466,7 +466,7 @@ section h2::after {
 
 .education-image-container {
   position: relative;
-  height: 280px;
+  height: 200px;
   overflow: hidden;
   background: var(--light-grey);
   cursor: pointer;
